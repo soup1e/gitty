@@ -48,11 +48,28 @@ describe('github auth', () => {
       Array [
         Object {
           "id": "1",
-          "post": "test post",
+          "text": "test post",
         },
         Object {
           "id": "2",
-          "post": "test post",
+          "text": "test post",
+        },
+      ]
+    `);
+  });
+
+  it('POST /posts should not post unless logged in', async () => {
+    await request(app).post('/api/v1/posts').send({ post: 'swag' });
+    const resp = await request(app).get('/api/v1/posts');
+    expect(resp.body).toMatchInlineSnapshot(`
+      Array [
+        Object {
+          "id": "1",
+          "text": "test post",
+        },
+        Object {
+          "id": "2",
+          "text": "test post",
         },
       ]
     `);
