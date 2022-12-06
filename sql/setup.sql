@@ -14,11 +14,11 @@ CREATE TABLE github_users (
 
 CREATE TABLE posts (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  post TEXT NOT NULL
+  text TEXT NOT NULL
 );
 
 INSERT INTO
-posts (post)
+posts (text)
 VALUES
 ('test post'),
 ('test post');
