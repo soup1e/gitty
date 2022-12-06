@@ -44,6 +44,17 @@ describe('github auth', () => {
 
   it('GET /posts shows all posts', async () => {
     const resp = await request(app).get('/api/v1/posts');
-    expect(resp.body).toMatchInlineSnapshot();
+    expect(resp.body).toMatchInlineSnapshot(`
+      Array [
+        Object {
+          "id": "1",
+          "post": "test post",
+        },
+        Object {
+          "id": "2",
+          "post": "test post",
+        },
+      ]
+    `);
   });
 });

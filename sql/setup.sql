@@ -3,9 +3,22 @@
 
 DROP TABLE IF EXISTS github_users;
 
+DROP TABLE IF EXISTS posts;
+
 CREATE TABLE github_users (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   login TEXT NOT NULL,
   email TEXT,
   avatar TEXT
 );
+
+CREATE TABLE posts (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  post TEXT NOT NULL
+);
+
+INSERT INTO
+posts (post)
+VALUES
+('test post'),
+('test post');
