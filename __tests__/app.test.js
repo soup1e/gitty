@@ -41,4 +41,9 @@ describe('github auth', () => {
     const resp = await request(app).delete('/api/v1/github');
     expect(resp.status).toBe(204);
   });
+
+  it('GET /posts shows all posts', async () => {
+    const resp = await request(app).get('/api/v1/posts');
+    expect(resp.body).toMatchInlineSnapshot();
+  });
 });
